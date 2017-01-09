@@ -23,10 +23,15 @@ $ sbt assembly
 ```
 
 ## Hardcoded Kafka values
+
 Source topic: snowplow-enriched-good
+
 Target topic: snowplow-enriched-good-json
 
 Bootstrap Servers: localhost:9092
+
 Zookeeper: localhost:2181
+
 Group ID: flinktest
+
 
