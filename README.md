@@ -18,3 +18,15 @@ $ sbt assembly
 
 ## Flink Job Submission
 
+```
+~/flink-1.1.3/bin/flink run -d -c com.rbox24.Enriched2JSON target/scala-2.10/snowplow-flink-assembly-1.0.jar
+```
+
+## Hardcoded Kafka values
+Source topic: snowplow-enriched-good
+Target topic: snowplow-enriched-good-json
+
+Bootstrap Servers: localhost:9092
+Zookeeper: localhost:2181
+Group ID: flinktest
+
