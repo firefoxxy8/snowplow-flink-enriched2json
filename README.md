@@ -19,7 +19,9 @@ $ sbt assembly
 ## Flink Job Submission
 
 ```
-~/flink-1.1.3/bin/flink run -d -c com.rbox24.Enriched2JSON target/scala-2.10/snowplow-flink-assembly-1.0.jar
+. env.sh
+cd ~
+$PROJECT_HOME/src/main/script/enriched2json_submit-watchdog.sh
 ```
 
 ## Hardcoded Kafka values
@@ -34,4 +36,8 @@ Zookeeper: localhost:2181
 
 Group ID: flinktest
 
+## Crontab Example
 
+```
+* * * * * . /root/snowplow-flink-enriched2json/env.sh&&$PROJECT_HOME/src/main/script/enriched2json_submit-watchdog.sh > root/enriched2json_submit-watchdog.log &2>1
+```
