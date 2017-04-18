@@ -16,8 +16,8 @@ object Enriched2JSON {
     val env = StreamExecutionEnvironment.getExecutionEnvironment
 
     val properties = new Properties()
-    properties.setProperty("bootstrap.servers", "localhost:9092")
-    properties.setProperty("zookeeper.connect", "localhost:2181")
+    properties.setProperty("bootstrap.servers", "ip-172-31-11-245.eu-west-2.compute.internal:9092")
+    properties.setProperty("zookeeper.connect", "ip-172-31-11-245.eu-west-2.compute.internal:2181")
     properties.setProperty("group.id", "flinktest")
 
     val kafkaConsumer = new FlinkKafkaConsumer082[String](
@@ -27,7 +27,7 @@ object Enriched2JSON {
     )
 
     val kafkaProducer = new FlinkKafkaProducer[String](
-      "localhost:9092",
+      "ip-172-31-11-245.eu-west-2.compute.internal:9092",
       "snowplow-enriched-good-json",
       new SimpleStringSchema
     )
