@@ -21,14 +21,14 @@ object Enriched2JSON {
     properties.setProperty("group.id", "flinktest")
 
     val kafkaConsumer = new FlinkKafkaConsumer082[String](
-      "snowplow-enriched-good",
+      "enriched-good",
       new SimpleStringSchema,
       properties
     )
 
     val kafkaProducer = new FlinkKafkaProducer[String](
       "ip-172-31-11-245.eu-west-2.compute.internal:9092",
-      "snowplow-enriched-good-json",
+      "enriched-good-json",
       new SimpleStringSchema
     )
 

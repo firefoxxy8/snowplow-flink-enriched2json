@@ -1,4 +1,4 @@
-name := "snowplow-flink-et"
+name := "snowplow-flink"
 
 version := "1.0"
 
